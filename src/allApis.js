@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const base_url="http://localhost:3000"
+const base_url="https://cms-server-ojz7.onrender.com"
 
 export const addContact=async(data)=>{
     return await axios.post(`${base_url}/Contact`,data)

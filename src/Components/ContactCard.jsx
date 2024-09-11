@@ -52,7 +52,7 @@ e.dataTransfer.setData('contact',JSON.stringify(data))
 
   return (
     <>
-      <Card className='rounded-4 py-4 mb-2'  onDragStart={(e)=>{dragHandler(e)}} draggable>
+      <Card className='rounded-4 py-4 mb-2 '  onDragStart={(e)=>{dragHandler(e)}} draggable>
         <i className="fa-solid fa-address-book text-center fs-1 mt-3 text-primary" />
         <Card.Body>
           <Card.Title className='text-primary text-center fs-4'>{contactDetails?.fname} {contactDetails?.lname}</Card.Title>
