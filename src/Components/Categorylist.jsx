@@ -1,8 +1,8 @@
 import React from 'react'
 import { getCategory,delCategory,updateCategory } from '../allApis'
-import ContactCard from './ContactCard'
 import { useState,useEffect } from 'react'
 import { toast } from 'react-toastify'
+import Card from 'react-bootstrap/Card';
 
 function Categorylist({response3}) {
 
@@ -84,7 +84,17 @@ getData()
                         {
                             item?.Contact?.length>0 &&
                             item?.Contact?.map(con=>(
-                                <ContactCard data={con}  />
+                                <Card  className='rounded-4 py-4 mb-2  '  onDragStart={(e)=>{dragHandler(e)}} draggable>
+                                <i className="fa-solid fa-address-book text-center fs-1 mt-3 text-primary" />
+                                <Card.Body>
+                                  <Card.Title className='text-primary text-center fs-4'>{con?.fname} {con?.lname}</Card.Title>
+                                  <Card.Text className='my-5 text-center'>
+                                    <h6 className='fs-5'>{con?.phNo}</h6>
+                                    <h6 className='fs-6'>{con?.email}</h6>
+                                  </Card.Text>
+                                 
+                                </Card.Body>
+                              </Card>
                             ))
                         }
                         </div>
